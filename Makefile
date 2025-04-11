@@ -1,24 +1,29 @@
 CC = gcc
 CFLAGS = -I./src -I./test/unity -Wall
 
-# Source files
+# Archivos fuente
 SRC = src/exercises.c src/main.c
 TESTSRC = src/exercises.c test/unity/unity.c test/tests_exercises.c
 
-# Output binaries
+# Archivos binarios
 OUT = build/program.exe
 TESTOUT = build/tests.exe
+SINGLETESTOUT = build/test_single.exe
 
-.PHONY: all clean test run
+.PHONY: all clean test run test-name
 
+# Compila el programa principal
 all: $(OUT)
 
-# Build the main program
 $(OUT): $(SRC)
 	@mkdir -p build
 	$(CC) $(SRC) $(CFLAGS) -o $(OUT)
 
-# Build and run the tests
+# Ejecuta el programa principal
+run: $(OUT)
+	$(OUT)
+
+# Compila y ejecuta todos los tests
 test: $(TESTOUT)
 	$(TESTOUT)
 
@@ -26,9 +31,12 @@ $(TESTOUT): $(TESTSRC)
 	@mkdir -p build
 	$(CC) $(TESTSRC) $(CFLAGS) -o $(TESTOUT)
 
-# Run the main program manually
-run: $(OUT)
-	$(OUT)
+# Compila y ejecuta una prueba individual
+test-name:
+	@mkdir -p build
+	$(CC) $(TESTSRC) $(CFLAGS) -DTEST_NAME=$(NAME) -o $(SINGLETESTOUT)
+	$(SINGLETESTOUT)
 
+# Limpia los archivos generados
 clean:
 	rm -rf build
