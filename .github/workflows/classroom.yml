@@ -1,0 +1,145 @@
+name: Autograding Tests
+
+on:
+  - push
+  - workflow_dispatch
+  - repository_dispatch
+
+permissions:
+  checks: write
+  actions: read
+  contents: read
+
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Compilation Test
+        id: build-test
+        uses: classroom-resources/autograding-io-grader@v1
+        with:
+          test-name: build
+          command: make
+          expected-exit-code: 0
+          timeout: 20
+          points: 20
+
+      - name: Run test_calcular_suma_promedio
+        id: test1
+        uses: classroom-resources/autograding-io-grader@v1
+        with:
+          test-name: test_calcular_suma_promedio
+          command: make test-name NAME=test_calcular_suma_promedio
+          expected-exit-code: 0
+          timeout: 10
+          points: 10
+
+      - name: Run test_encontrar_min_max
+        id: test2
+        uses: classroom-resources/autograding-io-grader@v1
+        with:
+          test-name: test_encontrar_min_max
+          command: make test-name NAME=test_encontrar_min_max
+          expected-exit-code: 0
+          timeout: 10
+          points: 10
+
+      - name: Run test_restar_arreglos
+        id: test3
+        uses: classroom-resources/autograding-io-grader@v1
+        with:
+          test-name: test_restar_arreglos
+          command: make test-name NAME=test_restar_arreglos
+          expected-exit-code: 0
+          timeout: 10
+          points: 10
+
+      - name: Run test_fusionar_arreglos
+        id: test4
+        uses: classroom-resources/autograding-io-grader@v1
+        with:
+          test-name: test_fusionar_arreglos
+          command: make test-name NAME=test_fusionar_arreglos
+          expected-exit-code: 0
+          timeout: 10
+          points: 10
+
+      - name: Run test_filtrar_pares
+        id: test5
+        uses: classroom-resources/autograding-io-grader@v1
+        with:
+          test-name: test_filtrar_pares
+          command: make test-name NAME=test_filtrar_pares
+          expected-exit-code: 0
+          timeout: 10
+          points: 10
+
+      - name: Run test_invertir_arreglo
+        id: test6
+        uses: classroom-resources/autograding-io-grader@v1
+        with:
+          test-name: test_invertir_arreglo
+          command: make test-name NAME=test_invertir_arreglo
+          expected-exit-code: 0
+          timeout: 10
+          points: 10
+
+      - name: Run test_promedios_mitad
+        id: test7
+        uses: classroom-resources/autograding-io-grader@v1
+        with:
+          test-name: test_promedios_mitad
+          command: make test-name NAME=test_promedios_mitad
+          expected-exit-code: 0
+          timeout: 10
+          points: 10
+
+      - name: Run test_encontrar_indices
+        id: test8
+        uses: classroom-resources/autograding-io-grader@v1
+        with:
+          test-name: test_encontrar_indices
+          command: make test-name NAME=test_encontrar_indices
+          expected-exit-code: 0
+          timeout: 10
+          points: 10
+
+      - name: Run test_suma_cruzada
+        id: test9
+        uses: classroom-resources/autograding-io-grader@v1
+        with:
+          test-name: test_suma_cruzada
+          command: make test-name NAME=test_suma_cruzada
+          expected-exit-code: 0
+          timeout: 10
+          points: 10
+
+      - name: Run test_normalizar_arreglo
+        id: test10
+        uses: classroom-resources/autograding-io-grader@v1
+        with:
+          test-name: test_normalizar_arreglo
+          command: make test-name NAME=test_normalizar_arreglo
+          expected-exit-code: 0
+          timeout: 10
+          points: 10
+
+      - name: Autograding Reporter
+        uses: classroom-resources/autograding-grading-reporter@v1
+        with:
+          runners: |
+            build-test
+            test1
+            test2
+            test3
+            test4
+            test5
+            test6
+            test7
+            test8
+            test9
+            test10
