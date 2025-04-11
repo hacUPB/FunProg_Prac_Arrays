@@ -1,62 +1,126 @@
-# 🧪 Actividad: Arreglos y Funciones en C
+# 📚 Práctica: Arreglos y Funciones en C
 
-Bienvenido/a. Esta actividad contiene 10 ejercicios prácticos para reforzar el uso de **arreglos** y **funciones** en C. Cada ejercicio se evalúa automáticamente usando pruebas unitarias.
+## 📖 Descripción General
 
----
+Esta práctica consta de 10 ejercicios en lenguaje C.  
 
-## ✅ Objetivo
+- **9 ejercicios** deben retornar un único valor usando `return`.  
+- **1 ejercicio** (calcSumAverage) debe retornar dos valores (la suma y el promedio) utilizando parámetros puntero.
 
-Implementar correctamente las funciones en `src/ejercicios.c` usando lógica clara, eficiente y correcta.
-
----
-
-## 🚀 Instrucciones
-
-1. Clona este repositorio.
-2. Abre y edita el archivo `src/ejercicios.c`.
-3. No modifiques el archivo `test/test_ejercicios.c` (las pruebas son automáticas).
-4. Puedes usar GitHub Codespaces o tu editor local.
+Todas las funciones están en inglés para evitar problemas con acentos y caracteres especiales.
 
 ---
 
-## 🧪 ¿Cómo ejecutar las pruebas?
+## 🗂️ Estructura del Proyecto
 
-Si estás en GitHub Codespaces o WSL/Linux, utiliza el siguiente comando en la consola:
+- **src/**: Contiene el código fuente.
+  - `exercises.h` y `exercises.c`: Implementación de los ejercicios.
+  - `main.c`: Función principal para probar manualmente las funciones. Cada estudiante debe implementar un código para probar cada una de las funciones en el main().
+- **test/**: Contiene las pruebas unitarias con el framework Unity.
+  - `tests_exercises.c`: Pruebas unitarias para cada ejercicio.
+  - **unity/**: Archivos reales de Unity (`unity.c` y `unity.h`).
+- **Makefile**: Compila el programa principal y las pruebas.
+- **README.md**: Este archivo con las instrucciones.
 
-```bash
-make
-```  
+---
 
-Esto compilará y ejecutará todas las pruebas. Debes ver algo como lo siguiente en tu consola:
+## 🛠️ Detalle de Funciones
 
-```bash
-Copiar
-Editar
-Unity test run 1 of 1
-test/test_ejercicios.c: PASS
------------------------
-10 Tests 0 Failures
-```
+### Funciones que retornan un único valor con `return`
 
-## 🛠️ Pruebas específicas (opcional)
+1. **calcSum**  
+   - **Descripción:** Calcula la suma de los elementos del arreglo.  
+   - **Entrada:** Arreglo de enteros y su tamaño.  
+   - **Salida:** Un entero con la suma total.
 
-Puedes probar una función específica así:
+2. **findMax**  
+   - **Descripción:** Encuentra el valor máximo en el arreglo.  
+   - **Entrada:** Arreglo de enteros y su tamaño.  
+   - **Salida:** El valor máximo encontrado.
 
-```bash
-Copiar
-Editar
-make test-name NAME=test_invertir_arreglo
+3. **calcAverage**  
+   - **Descripción:** Calcula el promedio de los elementos del arreglo.  
+   - **Entrada:** Arreglo de enteros y su tamaño.  
+   - **Salida:** Un valor flotante (float) representando el promedio.
 
-Reemplaza test_invertir_arreglo por el nombre del test que quieras correr.
-```  
+4. **countEvens**  
+   - **Descripción:** Cuenta la cantidad de números pares en el arreglo.  
+   - **Entrada:** Arreglo de enteros y su tamaño.  
+   - **Salida:** Un entero con el número de elementos pares.
 
-## 📥 Entrega
+5. **sumFirstLast**  
+   - **Descripción:** Suma el primer y el último elemento del arreglo.  
+   - **Entrada:** Arreglo de enteros y su tamaño.  
+   - **Salida:** Un entero con la suma de ambos valores.
 
-Cuando termines, haz push a tu repositorio. GitHub Classroom ejecutará las pruebas automáticamente y te mostrará los resultados. Recuerda que si tienes errores, puedes corregirlos y volver a sincronizar el repositorio remoto, para una nueva prueba.
+6. **findMin**  
+   - **Descripción:** Encuentra el valor mínimo en el arreglo.  
+   - **Entrada:** Arreglo de enteros y su tamaño.  
+   - **Salida:** El valor mínimo encontrado.
 
-## ✔️ Checklist
+7. **subtractArraysSum**  
+   - **Descripción:** Realiza la resta elemento a elemento de dos arreglos y retorna la suma de todas esas diferencias.  
+   - **Entrada:** Dos arreglos de enteros y su tamaño.  
+   - **Salida:** La suma de las diferencias de cada posición.
 
-- [x] Compila sin errores  
-- [x] Todas las funciones implementadas  
-- [x] Todas las pruebas pasan  
-- [x] Push realizado antes del plazo de vencimiento
+8. **mergeArraysSum**  
+   - **Descripción:** Fusiona (concatena) dos arreglos y retorna la suma de todos los elementos del arreglo resultante.  
+   - **Entrada:** Dos arreglos y sus tamaños respectivos.  
+   - **Salida:** Un entero con la suma total de los elementos fusionados.
+
+9. **productArray**  
+   - **Descripción:** Calcula el producto de todos los elementos del arreglo.  
+   - **Entrada:** Arreglo de enteros y su tamaño.  
+   - **Salida:** Un entero con el producto.
+
+### Función que retorna múltiples valores utilizando punteros
+
+1. **calcSumAverage**  
+   - **Descripción:** Calcula la suma y el promedio de los elementos del arreglo y retorna ambos valores mediante parámetros puntero.  
+   - **Entrada:** Arreglo de enteros, tamaño del arreglo, y punteros para la suma y el promedio.  
+   - **Salida:** N/A (Los resultados se obtienen a través de los punteros).
+
+---
+
+## 🚀 ¿Qué debes hacer?
+
+1. **Completar los Ejercicios:**  
+   Revisa `src/exercises.c` y asegúrate de que cada función realice lo indicado en su descripción.
+
+2. **Probar tu Trabajo:**
+   - Para ejecutar el programa manualmente. Si estás en un sistema operativo Linux, por ejemplo en Codespaces, puedes usar el siguiente comando.
+
+     ```bash
+     make run
+     ```
+
+     Esto compilará el programa principal (`src/main.c`) y lo ejecutará, mostrando los resultados en la consola.
+
+   - Para compilar y ejecutar las pruebas unitarias:
+
+     ```bash
+     make test
+     ```
+
+     Asegúrate de que todas las pruebas (tests) pasen correctamente.
+
+3. **Enviar la Asignatura:**  
+   Realiza `push` a tu repositorio. La práctica se evaluará manualmente y mediante las pruebas unitarias proporcionadas. El resultado lo puedes observar en tu repositorio remoto en GitHub en la pestaña Actions.
+
+---
+
+## 🖥️ Ambiente de Desarrollo
+
+- **Compilador:** gcc (se recomienda MinGW o WSL en Windows).  
+- **Make:** Asegúrate de tener un comando `make` operativo. Como puedes observar, el repositorio tiene un archivo Makefile, para poder utilizarlo es necesario tener instalada la aplicación make. Si tienes instalada MinGW, probablemente debas instalar `mingw32-make`. Si no lo tienes instalado, entonces debes subir la información al repositorio remoto y allí se realizarán las pruebas.
+- **Pruebas Unitarias:** Se utiliza el framework Unity para ejecutar los tests.
+
+---
+
+## 🔎 Consejos Adicionales
+
+- **Revisa cada función y comprende su objetivo.**  
+- **Ejecuta las pruebas frecuentemente** para asegurarte que tus cambios no rompan la funcionalidad.
+- **Usa el Makefile** para compilar y correr tanto el programa principal como los tests.
+
+“First, Solve the Problem. Then, Write the Code.” - John Johnson - 🚀
