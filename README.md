@@ -104,7 +104,7 @@ Todas las funciones están en inglés para evitar problemas con acentos y caract
 
      Asegúrate de que todas las pruebas (tests) pasen correctamente.
 
-3. **Enviar la Asignatura:**  
+3. **Enviar la práctica:**  
    Realiza `push` a tu repositorio. La práctica se evaluará manualmente y mediante las pruebas unitarias proporcionadas. El resultado lo puedes observar en tu repositorio remoto en GitHub en la pestaña Actions.
 
 ---
