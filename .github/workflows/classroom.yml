@@ -1,0 +1,57 @@
+name: Autograding - Arreglos y Funciones en C
+
+autograding:
+  - name: Compilación y ejecución de todos los tests
+    run: make
+    timeout: 10
+    points: 20
+
+  - name: Test: calcular_suma_promedio
+    run: make test-name NAME=test_calcular_suma_promedio
+    timeout: 5
+    points: 10
+
+  - name: Test: encontrar_min_max
+    run: make test-name NAME=test_encontrar_min_max
+    timeout: 5
+    points: 10
+
+  - name: Test: restar_arreglos
+    run: make test-name NAME=test_restar_arreglos
+    timeout: 5
+    points: 10
+
+  - name: Test: fusionar_arreglos
+    run: make test-name NAME=test_fusionar_arreglos
+    timeout: 5
+    points: 10
+
+  - name: Test: filtrar_pares
+    run: make test-name NAME=test_filtrar_pares
+    timeout: 5
+    points: 10
+
+  - name: Test: invertir_arreglo
+    run: make test-name NAME=test_invertir_arreglo
+    timeout: 5
+    points: 10
+
+  - name: Test: promedios_mitad
+    run: make test-name NAME=test_promedios_mitad
+    timeout: 5
+    points: 10
+
+  - name: Test: encontrar_indices
+    run: make test-name NAME=test_encontrar_indices
+    timeout: 5
+    points: 10
+
+  - name: Test: suma_cruzada
+    run: make test-name NAME=test_suma_cruzada
+    timeout: 5
+    points: 10
+
+  - name: Test: normalizar_arreglo
+    run: make test-name NAME=test_normalizar_arreglo
+    timeout: 5
+    points: 10
